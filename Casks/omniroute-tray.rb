@@ -1,13 +1,13 @@
 cask "omniroute-tray" do
   version "0.1.0"
-  sha256 :no_check
+  sha256 "58702db82734a907eb1ca89c398a86bec8b44efc51eb83df8992c96fcb0af0f5"
 
   url "https://github.com/zoispag/omniroute-tray/releases/download/v#{version}/OmniRouteTray_#{version}_aarch64.dmg"
   name "OmniRouteTray"
   desc "Menu bar app that supervises, monitors, and auto-updates the OmniRoute AI router"
   homepage "https://github.com/zoispag/omniroute-tray"
 
-  depends_on macos: ">= :ventura"
+  depends_on macos: :ventura
 
   app "OmniRouteTray.app"
 
