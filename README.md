@@ -9,3 +9,11 @@ brew install --cask zoispag/tap/omniroute-tray
 ```
 
 macOS menu-bar app that supervises, monitors, and auto-updates the OmniRoute AI router. See https://github.com/zoispag/omniroute-tray
+
+## valsenv
+
+```sh
+brew install --cask zoispag/tap/valsenv
+```
+
+Resolve `ref+` secret references in dotenv files using helmfile/vals. See https://github.com/zoispag/valsenv
