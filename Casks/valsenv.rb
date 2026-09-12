@@ -5,25 +5,21 @@ cask "valsenv" do
   on_macos do
     on_arm do
       sha256 "d619f9e8d249cb59397a8ef80bfe94279a3bc9f4f340b59c0dcd30057f6c5830"
-      url "https://github.com/zoispag/valsenv/releases/download/v#{version}/valsenv_#{version}_darwin_arm64.tar.gz",
-        verified: "github.com/zoispag/valsenv/"
+      url "https://github.com/zoispag/valsenv/releases/download/v#{version}/valsenv_#{version}_darwin_arm64.tar.gz"
     end
     on_intel do
       sha256 "8abcbfcdfd8ac6720ca96b968140936ec7d8c42625739a70d6a989d4cdf37a4a"
-      url "https://github.com/zoispag/valsenv/releases/download/v#{version}/valsenv_#{version}_darwin_amd64.tar.gz",
-        verified: "github.com/zoispag/valsenv/"
+      url "https://github.com/zoispag/valsenv/releases/download/v#{version}/valsenv_#{version}_darwin_amd64.tar.gz"
     end
   end
   on_linux do
     on_arm do
       sha256 "f2590577e6ed4bda9b1b4d0f92b167bd9cecb69743157519ccff3a892ff580e8"
-      url "https://github.com/zoispag/valsenv/releases/download/v#{version}/valsenv_#{version}_linux_arm64.tar.gz",
-        verified: "github.com/zoispag/valsenv/"
+      url "https://github.com/zoispag/valsenv/releases/download/v#{version}/valsenv_#{version}_linux_arm64.tar.gz"
     end
     on_intel do
       sha256 "7066c6ef3731cda0f6c3d4263ff7c5c3f23ecac9bfa7684b8738b096c73027ce"
-      url "https://github.com/zoispag/valsenv/releases/download/v#{version}/valsenv_#{version}_linux_amd64.tar.gz",
-        verified: "github.com/zoispag/valsenv/"
+      url "https://github.com/zoispag/valsenv/releases/download/v#{version}/valsenv_#{version}_linux_amd64.tar.gz"
     end
   end
 
@@ -37,9 +33,9 @@ cask "valsenv" do
 
   binary "valsenv"
 
-  postflight do
-    if OS.mac?
-      system_command "/usr/bin/xattr", args: ["-dr", "com.apple.quarantine", "#{staged_path}/valsenv"]
+  postflight_steps do
+    on_macos do
+      run "/usr/bin/xattr", args: ["-dr", "com.apple.quarantine", "{{staged_path}}/valsenv"]
     end
   end
 
