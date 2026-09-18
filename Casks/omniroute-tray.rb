@@ -1,6 +1,6 @@
 cask "omniroute-tray" do
-  version "0.1.19"
-  sha256 "828e51460a1b34307d46ef99cd056b7e07b2dae3d6e0cd1b156265b6bc3a3717"
+  version "0.1.20"
+  sha256 "f389be9809c2e005ed44d3fe19df69b2dfa79cd2e7bf74f726a5bf1ed6f1efd6"
 
   url "https://github.com/zoispag/omniroute-tray/releases/download/v#{version}/OmniRouteTray_#{version}_aarch64.dmg"
   name "OmniRouteTray"
